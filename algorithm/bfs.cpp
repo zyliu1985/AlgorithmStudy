@@ -6,7 +6,7 @@
 using namespace std;
 
 string tt, ss;
-map<string, vector<string>> mp;
+map<string, vector<string> > mp;
 map<string, bool> dir;
 map<string, int> step;
 map<string, string> ftr;
