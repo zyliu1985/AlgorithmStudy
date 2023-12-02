@@ -1,8 +1,9 @@
 #include <iostream>
+#include <algorithm>
 #define int long long
 using namespace std;
 
-bool h[10000005], l[10000005];
+int h[1000005], l[1000005];
 int hh, ll;
 signed main(){
 	int r, c, n, ans = 0;
@@ -10,10 +11,18 @@ signed main(){
 	for (int i = 1; i <= n; i++){
 		int x, y;
 		cin >> x >> y;
-		if (!h[x]) hh++;
-		if (!l[y]) ll++;
-		h[x] = true;
-		l[y] = true;
+		h[i] = x;
+		l[i] = y;
+	}
+	sort(h+1, h+n+1);
+	sort(l+1, l+n+1);
+	// …®√Ëh
+	for (int i = 1; i <= n; i++){
+		if (h[i] != h[i-1]) hh++;
+	}
+	// …®√Ël
+	for (int i = 1; i <= n; i++){
+		if (l[i] != l[i-1]) ll++;
 	}
 	cout << hh*c + ll*r - hh*ll << endl;
 	return 0;
