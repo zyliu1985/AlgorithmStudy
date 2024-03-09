@@ -14,14 +14,14 @@ struct farm{
 } f[505][505];
 string map[505][505];
 int peo[505][505], jb[505][505], food[505][505], gb[505][505], wood[505][505]/*, hero[505][505]*/;
-int level_to_p = {0, 350, 500, 750, 900, 1000, 1080, 1200};
+//int level_to_p = {0, 350, 500, 750, 900, 1000, 1080, 1200};
 string n[65];
 int kj[65], money[65];
 
 void tb_file(string name){
 	string filename = "d:\\Codes\\AlgorithmStudy\\you_xi\\"+name+".txt";
 	ofstream file(filename.c_str());
-	ofstream file(filename.c_str());
+//	ofstream file(filename.c_str());
 	file << "name:";
 	for (int i = 1; i <= 60; i++){
 		file << n[i].c_str() << ' ';
@@ -60,7 +60,7 @@ void tb_file(string name){
 		file << endl;
 	}
 	file << "jb:" << endl;
-	for (int)
+//	for (int)
 }
 
 namespace n_dl{

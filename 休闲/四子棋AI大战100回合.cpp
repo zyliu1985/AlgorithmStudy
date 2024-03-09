@@ -717,7 +717,7 @@ int main()
     if (winner == 1) cnta++;
     else if (winner == -1) cntb++;
     else if (winner == 0) cntc++;
-    for (int t = 2; t <= 10; t++)
+    for (int t = 2; t <= 5; t++)
     {
         memset(num, 999999, sizeof(num));
         for (int i = 1; i <= 6; i++)

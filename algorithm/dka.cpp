@@ -6,7 +6,7 @@
 using namespace std;
 
 string tt, ss;
-map<string, map<string, int>> mp;
+map<string, map<string, int> > mp;
 map<string, int> wsum;
 map<string, string> ftr;
 map<string, bool> out;
