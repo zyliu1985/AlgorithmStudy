@@ -2,10 +2,10 @@
 #include <vector>
 using namespace std;
 
-const int root = 1;
+int root = 1;
 const int N = 500005;
 vector<int> v[N];
-int dfn[N], low[N], clk, ans;
+int dfn[N], low[N], clk;
 bool cut[N];
 void tarjan(int x){
 	dfn[x] = low[x] = ++clk;

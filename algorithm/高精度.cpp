@@ -4,65 +4,74 @@ using namespace std;
 namespace Big{
 	const int SIZE = 10005;
 	class num{
+		bool __bigger(num x, num y, bool eq){
+			if (x.val[0] != y.val[0]) return x.val[0] > y.val[0];
+			for (int i = x.val[0]; i >= 1; i--)
+				if (x.val[i] != y.val[i]) return x.val[i] > y.val[i];
+			return eq;
+		}
+		bool __minner(num x, num y, bool eq){
+			if (x.val[0] != y.val[0]) return x.val[0] < y.val[0];
+			for (int i = x.val[0]; i >= 1; i--)
+				if (x.val[i] != y.val[i]) return x.val[i] < y.val[i];
+			return eq;
+		}
 		public:
 			int val[SIZE];
 			bool type;
 			void input(){
 				string s;
 				cin >> s;
-				if (s[0])
-				val[0] = s.size();
+				if (s[0] == '-') type = 1;
+				val[0] = s.size() - type;
 				for (int i = 0; i < val[0]; i++)
-					val[val[0]-i] = s[i] - '0';
+					val[val[0]-i] = s[i+type] - '0';
 			}
 			void string_input(string s){
-				val[0] = s.size();
+				if (s[0] == '-') type = 1;
+				val[0] = s.size() - type;
 				for (int i = 0; i < val[0]; i++)
-					val[val[0]-i] = s[i] - '0';
+					val[val[0]-i] = s[i+type] - '0';
 			}
-			void output(string ed = "\n"){
+			void output(string ed = ""){
 				if (val[0] == 0){
 					cout << 0 << ed;
 					return;
 				}
+				if (type) cout << '-';
 				for (int i = val[0]; i >= 1; i--)
 					cout << val[i];
 				cout << ed;
 			}
 			void clear(){
+				type = 0;
 				for (int i = 1; i <= val[0]; i++)
 					val[i] = 0;
 				val[0] = 0;
 			}
 			friend bool operator > (const num x, const num y){
-				if (x.val[0] != y.val[0]) return x.val[0] > y.val[0];
-				for (int i = x.val[0]; i >= 1; i--)
-					if (x.val[i] != y.val[i]) return x.val[i] > y.val[i];
-				return false;
+				if (x.type && y.type) return __minner(x, y, 0);
+				if (x.type || y.type) return y.type;
+				return __bigger(x, y, 0);
 			}
 			friend bool operator < (const num x, const num y){
-				if (x.val[0] != y.val[0]) return x.val[0] < y.val[0];
-				for (int i = x.val[0]; i >= 1; i--)
-					if (x.val[i] != y.val[i]) return x.val[i] < y.val[i];
-				return false;
+				if (x.type && y.type) return __bigger(x, y, 0);
+				if (x.type || y.type) return x.type;
+				return __minner(x, y, 0);
 			}
 			friend bool operator >= (const num x, const num y){
-				if (x.val[0] != y.val[0]) return x.val[0] > y.val[0];
-				for (int i = x.val[0]; i >= 1; i--)
-					if (x.val[i] != y.val[i]) return x.val[i] > y.val[i];
-				return true;
+				if (x.type && y.type) return __minner(x, y, 1);
+				if (x.type || y.type) return y.type;
+				return __bigger(x, y, 1);
 			}
 			friend bool operator <= (const num x, const num y){
-				if (x.val[0] != y.val[0]) return x.val[0] < y.val[0];
-				for (int i = x.val[0]; i >= 1; i--)
-					if (x.val[i] != y.val[i]) return x.val[i] < y.val[i];
-				return true;
+				if (x.type && y.type) return __bigger(x, y, 1);
+				if (x.type || y.type) return x.type;
+				return __minner(x, y, 1);
 			}
 			friend bool operator == (const num x, const num y){
-				if (x.val[0] != y.val[0]) return false;
-				for (int i = x.val[0]; i >= 1; i--)
-					if (x.val[i] != y.val[i]) return false;
-				return true;
+				if (x.type ^ y.type) return false;
+				return eaq(x, y)
 			}
 			friend bool operator != (const num x, const num y){
 				if (x.val[0] != y.val[0]) return true;
@@ -121,8 +130,6 @@ namespace Big{
 int main(){
 	Big::num a, b, c;
 	a.input();
-	b.input();
-	c = a + b;
-	c.output();
+	a.output("\n");
 	return 0;
 }
