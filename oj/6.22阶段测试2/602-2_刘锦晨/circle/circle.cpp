@@ -19,18 +19,6 @@ long long fun(long long x){
 		s3 = s3 * 3 % mod;
 	return s2 * s3 % mod;
 }
-//void dfs(int x, int last, int first){
-//	if (x > n){
-//		ans++;
-//		return;
-//	}
-//	for (int i = 1; i <= 4; i++){
-//		if (x != 1 && i == last) continue;
-//		if (x == n && i == first) continue;
-//		if (x == 1) dfs(x+1, i, i);
-//		else dfs(x+1, i, first);
-//	}
-//}
 int main(){
 //	freopen("circle.in", "r", stdin);
 //	freopen("circle.out", "w", stdout);

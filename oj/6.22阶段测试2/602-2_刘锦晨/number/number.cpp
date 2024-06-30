@@ -4,8 +4,8 @@ using namespace std;
 
 int a[105][105];
 int main(){
-	freopen("number.in", "r", stdin);
-	freopen("number.out", "w", stdout);
+//	freopen("number.in", "r", stdin);
+//	freopen("number.out", "w", stdout);
 	int n, m;
 	cin >> n >> m;
 	for (int i = 1; i <= n; i++)

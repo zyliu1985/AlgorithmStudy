@@ -71,13 +71,11 @@ namespace Big{
 			}
 			friend bool operator == (const num x, const num y){
 				if (x.type ^ y.type) return false;
-				return eaq(x, y)
+				return eaq(x, y);
 			}
 			friend bool operator != (const num x, const num y){
-				if (x.val[0] != y.val[0]) return true;
-				for (int i = x.val[0]; i >= 1; i--)
-					if (x.val[i] != y.val[i]) return true;
-				return false;
+				if (x.type ^ y.type) return true;
+				return !eaq(x, y);
 			}
 			friend num operator + (const num x, const num y){
 				int len = max(x.val[0], y.val[0]);
