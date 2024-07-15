@@ -63,7 +63,8 @@ int main(){
 	// 暴力n^2枚举b和c点
 	for (int b = 2; b <= n; b++)
 		for (int c = 2; c <= n; c++)
-			if (to[b][c])
+			if (to[b][c]) // b,c要可达
+				// 枚举a,d,由于只许要枚举3*3个（或更少，原因见上文）时间复杂度可以忽略不计
 				for (int ida = 0; ida < f[b].size(); ida++)
 					for (int idd = 0; idd < f[c].size(); idd++){
 						long long a = f[b][ida];
