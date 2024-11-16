@@ -14,7 +14,7 @@ void tarjan(int x){
 	in[x] = true;
 	st.push(x);
 	for (int i = 0; i < v[x].size(); i++){
-		if (dfn[v[x][i]] == 0){
+		if (!dfn[v[x][i]]){
 			tarjan(v[x][i]);
 			low[x] = min(low[x], low[v[x][i]]);
 		}

@@ -1,0 +1,33 @@
+
+decide xy(x, y)
+	for i = 1 -> m
+		if x1i >= x >= x2i && y == y1i
+			return ground
+		else if y1 < y <= y2 && (x == x1 || x == x2)
+			return wall
+	return air
+
+start:
+input
+echarge <- 2
+charge <- 0
+jump <- 0
+act type <- normal
+xy type <- decide xy(sx, sy)
+
+switch action
+	. : [empty]
+	A:
+	D:
+	LA:
+	LD:
+	LW:
+	LS:
+	LAW:
+	LDW:
+	LAS:
+	LDS:
+	S:
+	K:
+	KA:
+	KD:
