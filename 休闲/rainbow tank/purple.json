@@ -1,0 +1,1 @@
+{"name":"purple","author":"oiia","description":"purple rainbow","baseSize":40,"upgradesTo":["auraT2V1A","auraT2V2A"],"bodies":[{"angle":30,"numSides":6,"color":"#f9a","alpha":0,"isAura":true},{"size":12,"numSides":6,"color":"#9900ff","alpha":0.2,"isAura":true,"auraDamage":1000000,"auraRepel":10000,"auraSpiral":1000}]}

@@ -26,8 +26,13 @@ int main(){
 		f_name[cur] = t;
 	}
 	getchar();
-	for (int i = 1; i <= p; i++)
-		getline(cin, s[i]);
+	for (int i = 1; i <= p; i++){
+		char ch = getchar();
+		while (ch != '\n'){
+			s[i] += ch;
+			ch = getchar();
+		}
+	}
 	int ans = -1;
 	for (int gui = 1; gui <= m; gui++){
 		// Ã¶¾Ù·¸ÈË
@@ -36,12 +41,18 @@ int main(){
 			memset(truth, -1, sizeof(truth));
 			bool flag = false;
 			for (int i = 1; i <= p; i++){
-				int cnt1;
+				int cnt1 = -1;
 				for (int c = 0; c < s[i].size(); c++)
 					if (s[i][c] == ':'){
 						cnt1 = c;
 						break;
 					}
+//				cout << cnt1 << '\n' ;
+				if (cnt1 == -1){
+					cout << s[i].size() << '\n';
+					return 0;
+				}
+//				cout << s[i].substr(1) << '\n';
 				string who = s[i].substr(0, cnt1);
 				string say = s[i].substr(cnt1+2);
 				if (say == "I am guilty.")

@@ -1,0 +1,1 @@
+{"name":"red","author":"oiia","description":"red rainbow","baseSize":40,"upgradesTo":["auraT2V1A","auraT2V2A"],"bodies":[{"angle":30,"numSides":6,"color":"#f9a","alpha":0,"isAura":true},{"size":12,"numSides":6,"color":"#ff0000","alpha":0.2,"isAura":true,"auraDamage":1000000,"auraRepel":10000,"auraSpiral":1000}]}

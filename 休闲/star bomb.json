@@ -1,0 +1,1 @@
+{"name":"star bomb","author":"oiia","description":"shiny!...BOOM!","bodies":[{"color":"#eeff00","shapeEnabled":true,"shapeParamA":4,"shapeParamB":0.6,"shapeParamC":0.5,"shapeParamD":0.5,"conditionals":{"donutSize":{"on":"always","easing":"easeInOutQuad","target":1}}}]}

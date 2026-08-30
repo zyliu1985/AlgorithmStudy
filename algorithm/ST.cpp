@@ -44,12 +44,12 @@ int main(){
 	for (int i = 1; i <= n; i++)
 		cin >> a[i];
 	st.init(a);
-//	int q;
-//	cin >> q;
-//	for (int i = 1; i <= q; i++){
-//		int l, r;
-//		cin >> l >> r;
-//		cout << st.quary(l, r) << endl;
-//	}
+	int q;
+	cin >> q;
+	for (int i = 1; i <= q; i++){
+		int l, r;
+		cin >> l >> r;
+		cout << st.quary(l, r) << endl;
+	}
 	return 0;
 }

@@ -1,0 +1,1 @@
+{"name":"yellow","author":"oiia","description":"yellow rainbow","baseSize":40,"upgradesTo":["auraT2V1A","auraT2V2A"],"bodies":[{"angle":30,"numSides":6,"color":"#f9a","alpha":0,"isAura":true},{"size":12,"numSides":6,"color":"#fff700","alpha":0.2,"isAura":true,"auraDamage":1000000,"auraRepel":10000,"auraSpiral":1000}]}

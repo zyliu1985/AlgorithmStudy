@@ -47,7 +47,7 @@ int num[10][10]; // 值为0表示没有值，非0表示有数据，越界为正无穷
 int rd = 0; // 回合数
 int pos = 1; // 所在列
 int color = BLACK; // 黑先
-int maxD = 4; // 最大深度
+int maxD = 8; // 最大深度
 
 void clear()
 {
@@ -496,7 +496,7 @@ namespace pipi2
             return INF;
         if (findWinner() == -1*player) // 失败，评分最小
             return -INF;
-        if (step > maxD)
+        if (step > 2)
         {
             int ans = eval(player) - eval(-1*player);
             return ans;
@@ -717,7 +717,7 @@ int main()
     if (winner == 1) cnta++;
     else if (winner == -1) cntb++;
     else if (winner == 0) cntc++;
-    for (int t = 2; t <= 5; t++)
+    for (int t = 2; t <= 100; t++)
     {
         memset(num, 999999, sizeof(num));
         for (int i = 1; i <= 6; i++)
